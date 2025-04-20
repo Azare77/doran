@@ -8,8 +8,8 @@ class SizeHelper {
   late double _scale;
 
   SizeHelper(BuildContext context) {
-    _width = MediaQuery.of(context).size.width;
-    _height = MediaQuery.of(context).size.height;
+    _width = MediaQuery.sizeOf(context).width;
+    _height = MediaQuery.sizeOf(context).height;
     _scale = _height / _width;
   }
 
