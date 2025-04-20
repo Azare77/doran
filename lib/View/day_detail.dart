@@ -71,7 +71,7 @@ class _DayDetailState extends State<DayDetail> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(jalaiDate.day.toString()),
-                            Text(jalaiMonthName(jalaiDate.month)),
+                            Text(jalaliMonthName(jalaiDate.month)),
                           ],
                         ),
                         Column(
@@ -161,7 +161,7 @@ class _DayDetailState extends State<DayDetail> {
     }
   }
 
-  String jalaiMonthName(int month) {
+  String jalaliMonthName(int month) {
     switch (month) {
       case 1:
         return 'فروردین';
