@@ -23,12 +23,15 @@ class MyApp extends StatelessWidget {
       title: 'دوران',
       debugShowCheckedModeBanner: false,
       theme: CustomThemeData.persianThemeData(context),
-      home: LayoutBuilder(
-        builder: (context, constrain) {
-          MyApp.sizeHelper.update(constrain);
-          // ignore: prefer_const_constructors
-          return Calendar();
-        },
+      home: Directionality(
+        textDirection: TextDirection.rtl,
+        child: LayoutBuilder(
+          builder: (context, constrain) {
+            MyApp.sizeHelper.update(constrain);
+            // ignore: prefer_const_constructors
+            return Calendar();
+          },
+        ),
       ),
     );
   }

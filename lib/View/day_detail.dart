@@ -71,7 +71,7 @@ class _DayDetailState extends State<DayDetail> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text(jalaiDate.day.toString()),
-                            Text(jalaiMonthName(jalaiDate.month)),
+                            Text(jalaliMonthName(jalaiDate.month)),
                           ],
                         ),
                         Column(
@@ -161,65 +161,39 @@ class _DayDetailState extends State<DayDetail> {
     }
   }
 
-  String jalaiMonthName(int month) {
-    switch (month) {
-      case 1:
-        return 'فروردین';
-      case 2:
-        return 'اردیبهشت';
-      case 3:
-        return 'خرداد';
-      case 4:
-        return 'تیر';
-      case 5:
-        return 'مرداد';
-      case 6:
-        return 'شهریور';
-      case 7:
-        return 'مهر';
-      case 8:
-        return 'آبان';
-      case 9:
-        return 'آذر';
-      case 10:
-        return 'دی';
-      case 11:
-        return 'بهمن';
-      case 12:
-        return 'اسفند';
-      default:
-        return '';
-    }
-  }
+  static const _jalaliMonthNames = [
+    'فروردین',
+    'اردیبهشت',
+    'خرداد',
+    'تیر',
+    'مرداد',
+    'شهریور',
+    'مهر',
+    'آبان',
+    'آذر',
+    'دی',
+    'بهمن',
+    'اسفند'
+  ];
 
-  String gregorianMonthName(int month) {
-    switch (month) {
-      case 1:
-        return 'ژانویه';
-      case 2:
-        return 'فوریه';
-      case 3:
-        return 'مارس';
-      case 4:
-        return 'آوریل';
-      case 5:
-        return 'مه';
-      case 6:
-        return 'ژوئن';
-      case 7:
-        return 'جولای';
-      case 8:
-        return 'اوت';
-      case 9:
-        return 'سپتامبر';
-      case 10:
-        return 'اکتبر';
-      case 11:
-        return 'نوامبر';
-      case 12:
-        return 'دسامبر';
-      default:
-        return '';
-    }
-  }
+  String jalaliMonthName(int month) =>
+      _jalaliMonthNames.elementAtOrNull(month - 1) ?? '';
+
+  static const _gregorianMonthNames = [
+    'ژانویه',
+    'فوریه',
+    'مارس',
+    'آوریل',
+    'مه',
+    'ژوئن',
+    'جولای',
+    'اوت',
+    'سپتامبر',
+    'اکتبر',
+    'نوامبر',
+    'دسامبر'
+  ];
+
+  String gregorianMonthName(int month) =>
+      _gregorianMonthNames.elementAtOrNull(month - 1) ?? '';
 }
